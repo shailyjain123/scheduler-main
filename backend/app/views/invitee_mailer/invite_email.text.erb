@@ -1,0 +1,19 @@
+Hello <%= @invitee.name.presence || @invitee.email %>,
+
+You are invited to <%= @event.title %>.
+
+Date: <%= @event_date %>
+Time: <%= @event_time %>
+Organizer: <%= @host.full_name.presence || @host.email %>
+Location: <%= @event.location.presence || @meeting_link || "Online" %>
+Description: <%= @event.description.presence || "No description provided" %>
+
+Accept: <%= @accept_url %>
+Decline: <%= @decline_url %>
+Maybe: <%= @maybe_url %>
+
+<% if @unregistered_invitee %>
+You can review and respond to this invitation without logging in.
+View invitation: <%= @view_invite_url %>
+Optional signup: <%= @signup_url %>
+<% end %>

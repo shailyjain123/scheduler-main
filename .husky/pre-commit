@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Run backend RuboCop only when staged Ruby files exist under backend/
+backend_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '^backend/.*\.rb$' || true)
+if [ -n "$backend_files" ]; then
+  echo "[pre-commit] Running RuboCop on staged backend Ruby files..."
+  backend_ruby_version="$(cat backend/.ruby-version 2>/dev/null || true)"
+
+  if [ -n "$backend_ruby_version" ] && [ -x "$HOME/.rvm/bin/rvm" ]; then
+    # Prefer the backend's pinned Ruby version when RVM is available.
+    printf '%s\n' "$backend_files" | sed 's#^backend/##' | xargs env rvm_silence_path_mismatch_check_flag=1 "$HOME/.rvm/bin/rvm" "$backend_ruby_version" do sh -c 'cd backend && bundle exec rubocop --force-exclusion "$@"' --
+  else
+    # Fallback for environments without RVM.
+    printf '%s\n' "$backend_files" | sed 's#^backend/##' | xargs sh -c 'cd backend && bundle exec rubocop --force-exclusion "$@"' --
+  fi
+fi
+
+# Run web lint checks via lint-staged
+# if [ -d web ]; then
+#   echo "[pre-commit] Running web lint-staged..."
+#   cd web
+#   web_node_version="$(cat .nvmrc 2>/dev/null || true)"
+
+#   if [ -n "$web_node_version" ] && [ -x "$HOME/.nvm/nvm-exec" ]; then
+#     # Ensure lint-staged runs on the project's Node version.
+#     NVM_RC_VERSION="$web_node_version" "$HOME/.nvm/nvm-exec" npx lint-staged
+#   else
+#     npx lint-staged
+#   fi
+# fi

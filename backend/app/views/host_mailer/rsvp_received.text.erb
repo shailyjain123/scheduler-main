@@ -1,0 +1,6 @@
+<%= @invitee.name.presence || @invitee.email %> has <%= @status %> <%= @event.title %>.
+
+Event time: <%= @event.start_time.utc.iso8601 %>
+RSVP summary: <%= @accepted_count %> accepted, <%= @declined_count %> declined, <%= @pending_count %> pending
+
+View event details: <%= @event_url %>

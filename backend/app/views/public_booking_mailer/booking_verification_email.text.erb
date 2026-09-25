@@ -1,0 +1,12 @@
+Verify your booking request
+
+Hi <%= @guest_name.presence || 'there' %>,
+
+Enter this 6-digit code on the booking page to confirm your email address:
+
+<%= @verification_code %>
+
+Open the booking page:
+<%= @verify_url %>
+
+This code expires in <%= @expiry_minutes %> minutes.

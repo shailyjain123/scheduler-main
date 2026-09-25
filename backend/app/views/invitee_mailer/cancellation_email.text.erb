@@ -1,0 +1,10 @@
+Hello <%= @invitee.name.presence || @invitee.email %>,
+
+<%= @event.title %> has been cancelled.
+
+Original date: <%= @event_date %>
+Original time: <%= @event_time %>
+Organizer: <%= @host.full_name.presence || @host.email %>
+Description: <%= @event.description.presence || "No description provided" %>
+
+This event has been cancelled.

@@ -1,0 +1,60 @@
+
+/Users/babulal/rails_work/scheduler/web/jest.config.js
+  1:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/babulal/rails_work/scheduler/web/src/__tests__/onboarding/availability-page.test.tsx
+  29:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/__tests__/onboarding/finalise-page.test.tsx
+  33:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/__tests__/onboarding/integrations-page.test.tsx
+  29:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/__tests__/onboarding/meeting-types-page.test.tsx
+  28:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  37:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/__tests__/onboarding/profile-page.test.tsx
+  32:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  37:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/app/layout.tsx
+  28:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+/Users/babulal/rails_work/scheduler/web/src/components/auth/__tests__/LoginForm.test.tsx
+    2:8   warning  'userEvent' is defined but never used              @typescript-eslint/no-unused-vars
+  207:11  warning  'resolveLogin' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  207:25  error    Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+
+/Users/babulal/rails_work/scheduler/web/src/components/auth/__tests__/SignupForm.test.tsx
+  2:8  warning  'userEvent' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/babulal/rails_work/scheduler/web/src/components/modals/create-event-modal.tsx
+  127:60  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  128:33  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  350:99  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  969:21  warning  'type' is defined but never used          @typescript-eslint/no-unused-vars
+
+/Users/babulal/rails_work/scheduler/web/src/components/ui/country-select.tsx
+  134:18  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/Users/babulal/rails_work/scheduler/web/src/components/ui/country-select.tsx:134:18
+  132 |         <FloatingPortal>
+  133 |           <div
+> 134 |             ref={refs.setFloating}
+      |                  ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  135 |             style={floatingStyles}
+  136 |             {...getFloatingProps()}
+  137 |             className="z-[200] w-[240px] bg-white border border-slate-100 rounded-xl shadow-2xl shadow-slate-900/10 overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-150"  react-hooks/refs
+
+/Users/babulal/rails_work/scheduler/web/src/lib/hooks/use-meetings.ts
+  5:26  warning  'Event' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 22 problems (16 errors, 6 warnings)
+
